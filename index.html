@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OrnaMart - Exquisite Ornaments</title>
+    <!-- Google Fonts for a premium look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS from CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom font styles using the imported Google Fonts */
+      .font-playfair {
+        font-family: "Playfair Display", serif;
+      }
+      .font-poppins {
+        font-family: "Poppins", sans-serif;
+      }
+      /* Custom animations for a smoother user experience */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in-up {
+        animation: fadeIn 1s ease-out;
+      }
+      /* Custom scrollbar for a cleaner look */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #e5e7eb;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #a1a1aa;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body class="font-poppins antialiased text-stone-900 bg-stone-50">
+    <!-- Navbar Section -->
+    <nav class="sticky top-0 z-50 bg-stone-50 shadow-lg">
+      <div class="container flex items-center justify-between p-4 mx-auto">
+        <div class="text-3xl font-playfair font-bold text-stone-900">
+          OrnaMart
+        </div>
+        <div class="hidden items-center space-x-8 md:flex">
+          <!-- Updated href to link to the home section -->
+          <a
+            href="#home"
+            class="font-medium text-stone-700 hover:text-yellow-700 transition-colors"
+            >Home</a
+          >
+          <!-- Updated href to link to the new arrivals section -->
+          <a
+            href="#new-arrivals"
+            class="font-medium text-stone-700 hover:text-yellow-700 transition-colors"
+            >New Arrivals</a
+          >
+          <!-- Updated href to link to the shop section (was categories) -->
+          <a
+            href="#shop"
+            class="font-medium text-stone-700 hover:text-yellow-700 transition-colors"
+            >Shop</a
+          >
+          <!-- Updated href to link to the new contact section -->
+          <a
+            href="#contact"
+            class="font-medium text-stone-700 hover:text-yellow-700 transition-colors"
+            >Contact</a
+          >
+        </div>
+        <div class="flex items-center space-x-4">
+          <button
+            class="p-2 text-stone-700 rounded-full hover:bg-stone-200 transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-search"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </button>
+          <button
+            class="p-2 text-stone-700 rounded-full hover:bg-stone-200 transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-shopping-cart"
+            >
+              <circle cx="8" cy="21" r="1" />
+              <circle cx="19" cy="21" r="1" />
+              <path
+                d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-2 md:hidden text-stone-700 rounded-full hover:bg-stone-200 transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-menu"
+            >
+              <line x1="4" x2="20" y1="12" y2="12" />
+              <line x1="4" x2="20" y1="6" y2="6" />
+              <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- Added id="home" for the navigation link -->
+    <header
+      id="home"
+      class="relative flex items-center justify-center h-screen overflow-hidden text-white"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          src="./public/prahant-designing-studio-TWuVJClxhnk-unsplash.jpg"
+          alt="Lady wearing elegant earrings"
+          class="object-cover w-full h-full"
+          onerror="this.src='https://placehold.co/1920x1080/D4D4D8/78350F?text=Lady+with+Earrings';"
+        />
+        <div class="absolute inset-0 bg-stone-900 bg-opacity-40"></div>
+      </div>
+      <div class="relative z-10 p-8 text-center rounded-xl animate-fade-in-up">
+        <h1
+          class="text-5xl font-playfair md:text-7xl font-bold drop-shadow-lg leading-tight"
+        >
+          Elevate Your Style
+        </h1>
+        <p
+          class="mt-4 text-xl md:text-3xl font-light drop-shadow-md tracking-wide"
+        >
+          Discover exquisite ornaments for every occasion.
+        </p>
+        <a href="#shop"
+          ><button
+            class="mt-8 px-10 py-4 text-lg font-semibold text-stone-50 transition-all duration-300 transform bg-stone-900 rounded-full shadow-lg hover:scale-105 hover:bg-yellow-700"
+          >
+            Shop Now
+          </button></a
+        >
+      </div>
+    </header>
+
+    <!-- New Arrivals Section -->
+    <section id="new-arrivals" class="container py-24 mx-auto">
+      <h2 class="mb-16 text-4xl font-playfair font-bold text-center">
+        New Arrivals
+      </h2>
+      <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <!-- Product Card 1 -->
+        <div
+          class="overflow-hidden bg-white rounded-xl shadow-xl group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-stone-200"
+        >
+          <img
+            src="./public/drop-earing-1.jpg"
+            alt="Crystal Drop Earrings"
+            class="object-cover w-full h-80 transition-transform duration-300 group-hover:scale-105"
+            onerror="this.src='https://placehold.co/400x400/E7E5E4/78350F?text=New+Product';"
+          />
+          <div class="p-6 text-center">
+            <h3 class="font-semibold text-xl mb-1">Crystal Drop Earrings</h3>
+            <p class="text-lg text-yellow-700 font-bold">₹999</p>
+          </div>
+        </div>
+        <!-- Product Card 2 -->
+        <div
+          class="overflow-hidden bg-white rounded-xl shadow-xl group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-stone-200"
+        >
+          <img
+            src="./public/necklace-1.jpg"
+            alt="Delicate Gold Necklace"
+            class="object-cover w-full h-80 transition-transform duration-300 group-hover:scale-105"
+            onerror="this.src='https://placehold.co/400x400/E7E5E4/78350F?text=New+Product';"
+          />
+          <div class="p-6 text-center">
+            <h3 class="font-semibold text-xl mb-1">Delicate Gold Necklace</h3>
+            <p class="text-lg text-yellow-700 font-bold">₹1599</p>
+          </div>
+        </div>
+        <!-- Product Card 3 -->
+        <div
+          class="overflow-hidden bg-white rounded-xl shadow-xl group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-stone-200"
+        >
+          <img
+            src="./public/pearl-earings.jpg"
+            alt="Pearl Studs"
+            class="object-cover w-full h-80 transition-transform duration-300 group-hover:scale-105"
+            onerror="this.src='https://placehold.co/400x400/E7E5E4/78350F?text=New+Product';"
+          />
+          <div class="p-6 text-center">
+            <h3 class="font-semibold text-xl mb-1">Pearl Studs</h3>
+            <p class="text-lg text-yellow-700 font-bold">₹799</p>
+          </div>
+        </div>
+        <!-- Product Card 4 -->
+        <div
+          class="overflow-hidden bg-white rounded-xl shadow-xl group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-stone-200"
+        >
+          <img
+            src="./public/silver-ring.jpg"
+            alt="Vintage Silver Ring"
+            class="object-cover w-full h-80 transition-transform duration-300 group-hover:scale-105"
+            onerror="this.src='https://placehold.co/400x400/E7E5E4/78350F?text=New+Product';"
+          />
+          <div class="p-6 text-center">
+            <h3 class="font-semibold text-xl mb-1">Vintage Silver Ring</h3>
+            <p class="text-lg text-yellow-700 font-bold">₹1199</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center mt-20">
+        <a href="#shop"
+          ><button
+            class="px-12 py-4 text-lg font-semibold text-stone-50 transition-all duration-300 transform bg-stone-900 rounded-full shadow-lg hover:scale-105 hover:bg-yellow-700"
+          >
+            View All
+          </button></a
+        >
+      </div>
+    </section>
+
+    <!-- Categories Section (renamed to Shop) -->
+    <!-- Updated id to "shop" and changed heading text -->
+    <section id="shop" class="py-24 bg-stone-100">
+      <div class="container mx-auto">
+        <h2 class="mb-16 text-4xl font-playfair font-bold text-center">
+          Shop by Category
+        </h2>
+        <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
+          <!-- Category Card 1 -->
+          <div
+            class="relative overflow-hidden bg-white rounded-xl shadow-xl group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <img
+              src="./public/chocker.jpg"
+              alt="Chokers"
+              class="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-105"
+              onerror="this.src='https://placehold.co/300x300/E7E5E4/78350F?text=Category';"
+            />
+            <div
+              class="absolute inset-0 flex items-center justify-center bg-stone-900 bg-opacity-30 group-hover:bg-opacity-50 transition-all duration-300"
+            >
+              <h3 class="text-xl font-bold text-white tracking-wide">
+                Chokers
+              </h3>
+            </div>
+          </div>
+          <!-- Category Card 2 -->
+          <div
+            class="relative overflow-hidden bg-white rounded-xl shadow-xl group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <img
+              src="./public/necklace-2.jpg"
+              alt="Necklace"
+              class="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-105"
+              onerror="this.src='https://placehold.co/300x300/E7E5E4/78350F?text=Category';"
+            />
+            <div
+              class="absolute inset-0 flex items-center justify-center bg-stone-900 bg-opacity-30 group-hover:bg-opacity-50 transition-all duration-300"
+            >
+              <h3 class="text-xl font-bold text-white tracking-wide">
+                Necklace
+              </h3>
+            </div>
+          </div>
+          <!-- Category Card 3 -->
+          <div
+            class="relative overflow-hidden bg-white rounded-xl shadow-xl group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <img
+              src="./public/Bangles.jpg"
+              alt="Bangles"
+              class="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-105"
+              onerror="this.src='https://placehold.co/300x300/E7E5E4/78350F?text=Category';"
+            />
+            <div
+              class="absolute inset-0 flex items-center justify-center bg-stone-900 bg-opacity-30 group-hover:bg-opacity-50 transition-all duration-300"
+            >
+              <h3 class="text-xl font-bold text-white tracking-wide">
+                Bangles
+              </h3>
+            </div>
+          </div>
+          <!-- Category Card 4 -->
+          <div
+            class="relative overflow-hidden bg-white rounded-xl shadow-xl group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <img
+              src="./public/rings.jpg"
+              alt="Rings"
+              class="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-105"
+              onerror="this.src='https://placehold.co/300x300/E7E5E4/78350F?text=Category';"
+            />
+            <div
+              class="absolute inset-0 flex items-center justify-center bg-stone-900 bg-opacity-30 group-hover:bg-opacity-50 transition-all duration-300"
+            >
+              <h3 class="text-xl font-bold text-white tracking-wide">Rings</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews Section (Carousel) -->
+    <!-- Added id="reviews" for navigation -->
+    <section id="reviews" class="py-24">
+      <div class="container mx-auto">
+        <h2 class="mb-16 text-4xl font-playfair font-bold text-center">
+          What Our Customers Say
+        </h2>
+        <div
+          class="relative max-w-4xl mx-auto overflow-hidden bg-stone-100 p-12 rounded-3xl shadow-2xl"
+        >
+          <div
+            id="review-carousel"
+            class="flex transition-transform duration-500 ease-in-out"
+          >
+            <!-- Review 1 -->
+            <div class="flex-shrink-0 w-full text-center">
+              <p
+                class="text-2xl font-playfair italic text-stone-700 leading-relaxed"
+              >
+                "Absolutely love my new earrings! The quality is amazing and
+                they look even better in person."
+              </p>
+              <p class="mt-8 text-xl font-bold text-yellow-700">
+                - Priya Sharma
+              </p>
+            </div>
+            <!-- Review 2 -->
+            <div class="flex-shrink-0 w-full text-center">
+              <p
+                class="text-2xl font-playfair italic text-stone-700 leading-relaxed"
+              >
+                "Fast shipping and beautiful packaging. The necklace I ordered
+                is stunning."
+              </p>
+              <p class="mt-8 text-xl font-bold text-yellow-700">
+                - Anjali Patel
+              </p>
+            </div>
+            <!-- Review 3 -->
+            <div class="flex-shrink-0 w-full text-center">
+              <p
+                class="text-2xl font-playfair italic text-stone-700 leading-relaxed"
+              >
+                "Great selection of ornaments. I found the perfect gift for my
+                sister. Highly recommend!"
+              </p>
+              <p class="mt-8 text-xl font-bold text-yellow-700">- Sana Khan</p>
+            </div>
+          </div>
+          <!-- Carousel navigation buttons -->
+          <button
+            id="prev-review"
+            class="absolute left-0 p-3 text-stone-800 transform -translate-y-1/2 bg-stone-50 rounded-full shadow-md top-1/2 focus:outline-none ml-4 hover:bg-stone-200 transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-8 h-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            id="next-review"
+            class="absolute right-0 p-3 text-stone-800 transform -translate-y-1/2 bg-stone-50 rounded-full shadow-md top-1/2 focus:outline-none mr-4 hover:bg-stone-200 transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-8 h-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Contact Section -->
+    <!-- Added this new section for the "Contact" link to work -->
+    <section id="contact" class="container mx-auto py-24">
+      <h2 class="mb-16 text-4xl font-playfair font-bold text-center">
+        Get in Touch
+      </h2>
+      <div
+        class="max-w-xl mx-auto p-10 bg-stone-100 rounded-3xl shadow-xl border-2 border-stone-200"
+      >
+        <p class="text-center text-lg mb-8 text-stone-700">
+          Have a question or a custom request? Fill out the form below and we'll
+          get back to you.
+        </p>
+        <form class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-stone-700"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm px-4 py-3"
+              placeholder="Your Name"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-stone-700"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm px-4 py-3"
+              placeholder="you@example.com"
+            />
+          </div>
+          <div>
+            <label
+              for="message"
+              class="block text-sm font-medium text-stone-700"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm px-4 py-3"
+              placeholder="Your message..."
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full px-4 py-3 text-lg font-semibold text-stone-50 transition-all duration-300 transform bg-stone-900 rounded-lg shadow-lg hover:bg-yellow-700 hover:scale-105"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-stone-900 text-stone-300 py-20">
+      <div
+        class="container mx-auto grid grid-cols-1 gap-12 px-4 md:grid-cols-4"
+      >
+        <div>
+          <h3 class="mb-4 text-3xl font-playfair font-bold text-white">
+            OrnaMart
+          </h3>
+          <p class="text-sm">123 Ornament Street, Jewelry Town, 12345</p>
+          <p class="text-sm">Email: contact@ornamart.com</p>
+          <p class="text-sm">Phone: +91 98765 4****</p>
+        </div>
+        <div>
+          <h3 class="mb-4 text-xl font-bold text-white">Quick Links</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="#" class="hover:text-yellow-400 transition-colors"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-400 transition-colors"
+                >Shipping & Returns</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-400 transition-colors"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-400 transition-colors"
+                >Terms of Service</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="mb-4 text-xl font-bold text-white">Follow Us</h3>
+          <div class="flex space-x-4">
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="text-stone-300 hover:text-yellow-400 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-facebook"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="text-stone-300 hover:text-yellow-400 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-instagram"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            </a>
+            <a
+              href="#"
+              aria-label="Pinterest"
+              class="text-stone-300 hover:text-yellow-400 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-pin"
+              >
+                <line x1="12" x2="12" y1="17" y2="22" />
+                <path
+                  d="M15 17.8l-1.4-1.4c-2.3-2.3-2.3-6.1 0-8.4l2.8-2.8c2.3-2.3 6.1-2.3 8.4 0l1.4 1.4c2.3 2.3 2.3 6.1 0 8.4l-2.8 2.8c-2.3 2.3-6.1 2.3-8.4 0z"
+                />
+                <path
+                  d="M7.8 7.8l-1.4 1.4c-2.3 2.3-2.3 6.1 0 8.4l2.8 2.8c2.3 2.3 6.1 2.3 8.4 0l1.4-1.4c-2.3-2.3-6.1-2.3-8.4 0l-2.8-2.8c-2.3-2.3-2.3-6.1 0-8.4z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 class="mb-4 text-xl font-bold text-white">Newsletter</h3>
+          <p class="text-sm mb-4">
+            Subscribe to our newsletter for exclusive offers!
+          </p>
+          <form class="flex">
+            <input
+              type="email"
+              placeholder="Your email"
+              class="w-full px-4 py-3 text-stone-900 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            />
+            <button
+              type="submit"
+              class="px-6 py-3 font-bold text-white bg-yellow-700 rounded-r-lg hover:bg-yellow-800 transition-colors"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+      <div
+        class="container mx-auto text-center text-stone-500 mt-16 pt-8 border-t border-stone-800"
+      >
+        <p>© 2024 OrnaMart. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript for the review carousel -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const carousel = document.getElementById("review-carousel");
+        const reviews = carousel.querySelectorAll("div");
+        const prevButton = document.getElementById("prev-review");
+        const nextButton = document.getElementById("next-review");
+        let currentIndex = 0;
+        const reviewCount = reviews.length;
+
+        const updateCarousel = () => {
+          carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        };
+
+        nextButton.addEventListener("click", () => {
+          currentIndex = (currentIndex + 1) % reviewCount;
+          updateCarousel();
+        });
+
+        prevButton.addEventListener("click", () => {
+          currentIndex = (currentIndex - 1 + reviewCount) % reviewCount;
+          updateCarousel();
+        });
+      });
+    </script>
+  </body>
+</html>
